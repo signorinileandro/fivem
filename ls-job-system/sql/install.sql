@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS `ls_delivery_stats` (
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `citizenid` VARCHAR(50) NOT NULL,
+    `jobs_completed` INT UNSIGNED NOT NULL DEFAULT 0,
+    `deliveries_completed` INT UNSIGNED NOT NULL DEFAULT 0,
+    `money_earned` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `uq_ls_delivery_stats_citizenid` (`citizenid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
